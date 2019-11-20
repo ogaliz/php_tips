@@ -15,13 +15,13 @@ $language = '';
 // *************************** GETTERS AND SETTERS
 /*
  * Fijamos el idioma que queramos
- * PARÁMETROS ADMITIDOS : 'es' || 'cat'
+ * PARï¿½METROS ADMITIDOS : 'es' || 'cat'
  * */
 function setIdioma($idioma){
 
     $esCorrecto = false;
 
-    //Comprobamos que el parámetro que se ha pasado es correcto
+    //Comprobamos que el parï¿½metro que se ha pasado es correcto
     foreach ($GLOBALS['idiomas'] as $item){
 
         if ($idioma === $item){
@@ -33,7 +33,7 @@ function setIdioma($idioma){
     if ($esCorrecto) {
         return $GLOBALS['language'] = setlocale(LC_TIME, $idioma);
     }else{
-        echo "El parámetro de entrada: " . $idioma . " no es correcto, debe ser 'es' o 'cat'";
+        echo "El parï¿½metro de entrada: " . $idioma . " no es correcto, debe ser 'es' o 'cat'";
     }
 
 }
@@ -85,7 +85,7 @@ function formattedFechaMayusEs(){
     getIdioma();
 ?>
 
-<!-- <h1>Formateo de fechas con Carbon, prácticas y ejemplos:</h1> -->
+<!-- <h1>Formateo de fechas con Carbon, prï¿½cticas y ejemplos:</h1> -->
 <div>
     <div><p><?php echo testCarbon(); ?></p></div>
     <div><p><?php echo formattedFechaEs(); ?></p></div>
