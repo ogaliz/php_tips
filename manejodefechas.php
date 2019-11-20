@@ -4,11 +4,45 @@ require 'vendor/autoload.php';
 
 use Carbon\Carbon;
 
-/* Fechas en Español */
-setlocale(LC_TIME, 'es');
+/* Idiomas que va a aceptar nuestro programa */
+$idiomas = array(
+    'es',
+    'cat'
+);
 
-/* Fechas en Catalán */
-//setlocale(LC_TIME, 'cat');
+$language = '';
+
+// *************************** GETTERS AND SETTERS
+/*
+ * Fijamos el idioma que queramos
+ * PARÁMETROS ADMITIDOS : 'es' || 'cat'
+ * */
+function setIdioma($idioma){
+
+    $esCorrecto = false;
+
+    //Comprobamos que el parámetro que se ha pasado es correcto
+    foreach ($GLOBALS['idiomas'] as $item){
+
+        if ($idioma === $item){
+            $esCorrecto = true;
+            break;
+        }
+    }
+
+    if ($esCorrecto) {
+        return $GLOBALS['language'] = setlocale(LC_TIME, $idioma);
+    }else{
+        echo "El parámetro de entrada: " . $idioma . " no es correcto, debe ser 'es' o 'cat'";
+    }
+
+}
+
+function getIdioma(){
+    echo $GLOBALS['language'];
+}
+
+// *************************** END GETTERS AND SETTERS
 
 /* Test if Carbon is working */
 function testCarbon() {
@@ -25,7 +59,7 @@ function formattedFechaMayusEs(){
     $fecha = formattedFechaEs();
 
     $pos_mes = strpos($fecha, 'de ') + 3;
-    $pos_dia = strpos($fecha, ' de') + 3;
+    $pos_dia = strpos($fecha, ' de');
 
     $dia = ucfirst(substr($fecha, 0, $pos_dia));
     $mes = ucfirst(substr($fecha, $pos_mes, strlen($fecha)));
@@ -46,7 +80,12 @@ function formattedFechaMayusEs(){
 </head>
 <body>
 
-<h1>Formateo de fechas con Carbon, prácticas y ejemplos:</h1>
+<?php
+    setIdioma('cat');
+    getIdioma();
+?>
+
+<!-- <h1>Formateo de fechas con Carbon, prácticas y ejemplos:</h1> -->
 <div>
     <div><p><?php echo testCarbon(); ?></p></div>
     <div><p><?php echo formattedFechaEs(); ?></p></div>
