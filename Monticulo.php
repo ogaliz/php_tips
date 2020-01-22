@@ -47,6 +47,8 @@ $arreglo = $heap->current();
 
 echo $arreglo[0];
 
+$cuenta = strlen('AMNIOCEN.PRECOZaaaaa');
+echo $cuenta;
 //while ($heap->valid()){
 //
 //    list($equipo, $puntuacion) = $heap->current();
