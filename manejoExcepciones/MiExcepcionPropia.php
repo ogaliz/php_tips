@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Lanza una una excepcion propia con el código
+ */
 
 class MiExcepcionPropia extends Exception
 {

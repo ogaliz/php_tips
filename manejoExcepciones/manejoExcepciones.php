@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Lanza una excepción por defecto
+ */
 
 $miLado = -3;
 function areaCuadrado($lado){
