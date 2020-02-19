@@ -78,10 +78,11 @@
 
     <?php
 
+        echo "<br><br>";
         print_r($_POST);
-
+        echo "<br><br>";
         echo $_POST["codigo"];
-
+        echo "<br><br><br>";
         echo $_POST["activo"];
 
         /*for ($i = 0; $i < 10; $i++){
