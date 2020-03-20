@@ -3,7 +3,8 @@
 /*Ejercicio en el que conectaremos con una base de datos mysql utilizando POO*/
 
 #1. Establecemos la conexion
-$conexion = new mysqli("localhost","root","","curso_php");
+// $conexion = new mysqli("localhost","root","","curso_php");
+$conexion = new mysqli("DEVDEX02","as","31081966","DexeusBCN_QA");
 
 #Respuesta del programa si la conexion no tiene exito:
 if($conexion->connect_errno){
@@ -15,7 +16,8 @@ if($conexion->connect_errno){
 
 $conexion->set_charset("utf-8");
 
-$sql = "select * from datospersonales";
+// $sql = "select * from datospersonales";
+$sql = 'AgendaMedica_SEL_DatosUsuario @usuario = "OSCRUI"';
 
 $resultados = $conexion->query($sql);
 
